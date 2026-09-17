@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgendApp</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>📅 AgendApp</h1>
+        <p>Organiza tu día de forma sencilla</p>
+    </header>
+
+    <main>
+        <section class="calendar">
+            <div class="calendar-header">
+                <button id="prevMonth">←</button>
+                <h2 id="monthYear"></h2>
+                <button id="nextMonth">→</button>
+            </div>
+
+            <div class="weekdays">
+                <span>Lun</span>
+                <span>Mar</span>
+                <span>Mié</span>
+                <span>Jue</span>
+                <span>Vie</span>
+                <span>Sáb</span>
+                <span>Dom</span>
+            </div>
+
+            <div id="calendarDays" class="calendar-days"></div>
+        </section>
+
+        <section class="events">
+            <h2>Mis actividades</h2>
+
+            <button id="addEventBtn" class="add-button">
+                + Agregar actividad
+            </button>
+
+            <div id="eventsList">
+                <p class="empty">No tienes actividades todavía.</p>
+            </div>
+        </section>
+    </main>
+
+    <div id="eventModal" class="modal hidden">
+        <div class="modal-content">
+
+            <button id="closeModal" class="close">×</button>
+
+            <h2>Nueva actividad</h2>
+
+            <label>Nombre</label>
+            <input 
+                type="text" 
+                id="eventTitle" 
+                placeholder="Ej: Estudiar matemáticas"
+            >
+
+            <label>Fecha</label>
+            <input type="date" id="eventDate">
+
+            <label>Hora</label>
+            <input type="time" id="eventTime">
+            <label>Recordarme</label>
+<select id="eventReminder">
+    <option value="0">Sin recordatorio</option>
+    <option value="5">5 minutos antes</option>
+    <option value="15">15 minutos antes</option>
+    <option value="30">30 minutos antes</option>
+    <option value="60">1 hora antes</option>
+</select>
+
+            <button id="saveEvent" class="save-button">
+                Guardar actividad
+            </button>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
